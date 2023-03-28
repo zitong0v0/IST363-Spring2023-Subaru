@@ -4,14 +4,14 @@ import Image from 'next/image';
 
 
 const CarColorPicker = ({colors}) => {
-    const [activeColor, setActiveColor] = useState(color[0]);
+    const [activeColor, setActiveColor] = useState(colors[0]);
     return <div>
         <h2>Color picker</h2>
         <div>
             <Image 
                 src={`/vehicles/crosstrek/colors/crosstrek-${activeColor.slug}.webp`}
                 alt={`Crosstrek ${activeColor.name}`}
-                weight={300}
+                width={300}
                 height={200}
             />
         </div>
