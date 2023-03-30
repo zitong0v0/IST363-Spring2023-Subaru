@@ -1,9 +1,9 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Swatches from '../components/Swatches';
 import Image from 'next/image';
 
 
-const CarColorPicker = ({colors}) => {
+const CarColorPicker = ({ colors }) => {
     const [activeColor, setActiveColor] = useState(colors[0]);
     return <div>
         <h2>Color picker</h2>
@@ -15,8 +15,12 @@ const CarColorPicker = ({colors}) => {
                 height={200}
             />
         </div>
-        <Swatches colors={colors}/>
-        <h3>Color name</h3>
+        <Swatches 
+            colors={colors} 
+            clickHandler={setActiveColor}
+            activeColor={activeColor}
+        />
+        <h3>{activeColor.name}</h3>
     </div>
     
 }
