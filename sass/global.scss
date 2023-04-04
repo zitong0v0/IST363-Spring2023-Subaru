@@ -1,0 +1,23 @@
+@use './vendor/normalize';
+@use './abstracts/vars';
+
+//typgraphic reset
+h1, h2, h3, h4, h5, h6, h7, p, ul, li {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+}
+ul, li {
+    list-style: none;
+}
+img {
+    vertical-align: top;
+}
+*{
+    box-sizing: border-box; //invert padding
+    
+}
+
+body {
+    background-color: white;
+}
