@@ -3,7 +3,7 @@ import CarColorPicker from '../components/CarColorPicker';
 import Header from '../components/Header';
 import Image from 'next/image';
 import Layout from '../components/Layout';
-import LocationPicker from '../components/SectionCTA';
+import LocationPicker from '../components/LocationPicker';
 import Showcase from '../components/Showcase';
 import SectionCTA from '../components/SectionCTA';
 
@@ -34,26 +34,6 @@ const Homepage = ({data, colors}) => {
     <LocationPicker />
     <CarColorPicker colors={colors}/>
     <SectionCTA />
-   
-
-
-    
-    {data.map((car) => {
-      const { model, slug } = car;
-      return <article>
-        <Image
-          src={`/vehicles/${slug}/medium.webp`}
-          alt={`${model} car`}
-          width={350}
-          height={185} 
-        />
-        <h2>{model}</h2>
-      
-      </article>
-
-    })}
-
-
 
   </Layout>
 }
