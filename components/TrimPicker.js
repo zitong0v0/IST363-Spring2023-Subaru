@@ -1,7 +1,8 @@
 import Heading from './Heading';
 import Image from 'next/image';
-const TrimPicker = () => {
+const TrimPicker = ({trimLevels}) => {
     return <div>
+        <ul>
         {trimLevels.map((trimLevel, index) => {
             const { name, images } = trimLevel;
             const { thumbnail } = images;
@@ -19,6 +20,7 @@ const TrimPicker = () => {
             </li>
 
         })}
+        </ul>
     </div>
 
 }
