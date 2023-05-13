@@ -1,0 +1,22 @@
+@use '../sass/abstracts/vars';
+
+.tabs {
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    border-bottom: 1px solid gray;
+    margin-top: 2rem;
+    li {
+        font-family: Arial;
+        font-size: 1rem;
+        text-transform: uppercase;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        &.active {
+            border-bottom: 3px solid vars.$color_blue;
+            font-weight: bold;
+
+        }
+    }
+}
