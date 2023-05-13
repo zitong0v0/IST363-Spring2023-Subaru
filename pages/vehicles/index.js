@@ -28,7 +28,7 @@ const VehiclesPage = ({vehiclesData}) => {
       const {vehicleTypes} = vehicle.node.vehicleInformation;
       return activeVehicleType === "all" || vehicleTypes.includes(activeVehicleType)
     });
-    
+
     return (
         <Layout>
           <Container>
@@ -42,6 +42,7 @@ const VehiclesPage = ({vehiclesData}) => {
               changeHandler={setActiveVehicleType}
             />
             <Grid 
+              activeItem={activeVehicleType}
               items={filteredVehicles}
             />
           </Container>
