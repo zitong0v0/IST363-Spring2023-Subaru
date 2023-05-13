@@ -21,8 +21,14 @@ export async function getStaticProps() {
   }
 
 const VehiclesPage = ({vehiclesData}) => {
-    const [activeVehicleType, setActiveVehicleType] = useState();
-    const vehicleTypes = filterAllVehicleTypes(vehiclesData);
+    const [activeVehicleType, setActiveVehicleType] = useState("all");
+    const vehicleTypes = ["all", ...filterAllVehicleTypes(vehiclesData)];
+
+    const filteredVehicles = vehiclesData.filter((vehicle) => {
+      const {vehicleTypes} = vehicle.node.vehicleInformation;
+      return activeVehicleType === "all" || vehicleTypes.includes(activeVehicleType)
+    });
+    
     return (
         <Layout>
           <Container>
@@ -30,8 +36,14 @@ const VehiclesPage = ({vehiclesData}) => {
               level={1}
                textAlign="center"
             >Vehicles</Heading>
-            <Tabs items={vehicleTypes}/>
-            <Grid />
+            <Tabs 
+              items={vehicleTypes}
+              activeItem={activeVehicleType}
+              changeHandler={setActiveVehicleType}
+            />
+            <Grid 
+              items={filteredVehicles}
+            />
           </Container>
         
         </Layout>
